@@ -43,11 +43,11 @@
                     document.getElementById('prep-tip-1-1').textContent = pagesPerPaper.toString();
                     document.getElementById('prep-tip-1-2').textContent = "4 yoki 8 yoki 12 va h.k";
 
-                    var printTip1 = "Set your printer's \x22pages per side\x22 setting to " + (pagesPerPaper / 2) + ".";
+                    var printTip1 = "Printerni \x22har bir tomoni uchun sahifalar soni\x22 sozlamasini " + (pagesPerPaper / 2) + " ga o'zgartiring. ";
                     document.getElementById('print-tip-doublesided-1').textContent = printTip1;
                     document.getElementById('print-tip-singlesided-1').textContent = printTip1;
 
-                    var printTip10 = "Fold to create your booklet!"
+                    var printTip10 = ""
                     document.getElementById('print-tip-doublesided-10').textContent = printTip10;
                     document.getElementById('print-tip-singlesided-10').textContent = printTip10;
                     if (pageRemainder === 0) {
@@ -71,9 +71,9 @@
 
                         }
                     } else {
-                        side1list = "Not divisible by " + pagesPerPaper + ". Need " + (pagesPerPaper - pageRemainder) + " more page(s).,";
+                        side1list =  "Betlar soni " + pagesPerPaper + " ga bo'linmaydi . Chop etish uchun " + (pagesPerPaper - pageRemainder) + " sahifa qo'shish kerak,";
                         side2list = "";
-                        duplexlist = "Not divisible by " + pagesPerPaper + ". Need " + (pagesPerPaper - pageRemainder) + " more page(s).,";
+                        duplexlist =  "Betlar soni " + pagesPerPaper + " ga bo'linmaydi . Chop etish uchun " + (pagesPerPaper - pageRemainder) + "sahifa qo'shish kerak,";
                     }
                     break;
 
@@ -83,13 +83,13 @@
                     document.getElementById('prep-tip-1-1').textContent = pagesPerPaper.toString();
                     document.getElementById('prep-tip-1-2').textContent = "8 yoki 16 yoki 24 va h.k";
 
-                    var printTip1 = "Set your printer's \x22pages per side\x22 setting to " + (pagesPerPaper / 2) + ".";
+                    var printTip1 = "Printerni \x22har bir tomoni uchun sahifalar soni\x22 sozlamasini " + (pagesPerPaper / 2) + " ga o'zgartiring. ";
                     document.getElementById('print-tip-doublesided-1').textContent = printTip1;
                     document.getElementById('print-tip-singlesided-1').textContent = printTip1;
 
 
-                    var printTip10single = "Flip the pile so that the first page is facing up. Cut the pages in the middle horizontally to create a top and bottom pile. Place the top pile on top of the bottom pile then fold!";
-                    var printTip10double = "Cut the pages in the middle horizontally to create a top and bottom pile. Place the top pile on top of the bottom pile then fold!";
+                    var printTip10single = "";
+                    var printTip10double = "";
                     document.getElementById('print-tip-doublesided-10').textContent = printTip10double;
                     document.getElementById('print-tip-singlesided-10').textContent = printTip10single;
 
@@ -117,9 +117,9 @@
                             duplexlist = duplexlist + newside1 + newside2;
                         }
                     } else {
-                        side1list = "Not divisible by " + pagesPerPaper + ". Need " + (pagesPerPaper - pageRemainder) + " more page(s).,";
+                        side1list = "Betlar soni " + pagesPerPaper + " ga bo'linmaydi . Chop etish uchun " + (pagesPerPaper - pageRemainder) + " sahifa qo'shish kerak,";
                         side2list = "";
-                        duplexlist = "Not divisible by " + pagesPerPaper + ". Need " + (pagesPerPaper - pageRemainder) + " more page(s).,";
+                        duplexlist = "Betlar soni " + pagesPerPaper + " ga bo'linmaydi . Chop etish uchun " + (pagesPerPaper - pageRemainder) + "sahifa qo'shish kerak,";
                     }
 
                     break;
@@ -149,7 +149,7 @@
             copyText.setSelectionRange(0, 99999); /*For mobile devices*/
             document.execCommand("copy");
             toastr.clear()
-            toastr.info("Copied to clipboard");
+            toastr.info("Xotiraga nusxalandi !");
 
         }
 
@@ -251,7 +251,7 @@
                 <ul class="list-group" id="doublesided">
                     <li class="list-group-item" id="print-tip-doublesided-1"> &nbsp;</li>
 
-                    <li class="list-group-item" id="print-tip-doublesided-3">Print pages in this order:
+                    <li class="list-group-item" id="print-tip-doublesided-3">Quyidagi tartibda chop eting:
                         <div class="input-group">
                             <input class="form-control" type="text" id="duplexlist" size="50"/>
                             <span class="input-group-btn">
@@ -268,7 +268,7 @@
                 <!-- single sided output -->
                 <ul class="list-group" id="singlesided">
                     <li class="list-group-item" id="print-tip-singlesided-1"> &nbsp;</li>
-                    <li class="list-group-item" id="print-tip-singlesided-2">Print these pages first:
+                    <li class="list-group-item" id="print-tip-singlesided-2">Dastlab buni chop eting:
                         <div class="input-group">
                             <input class="form-control" type="text" id="side1list" size="50"/>
                             <span class="input-group-btn">
@@ -277,10 +277,9 @@
                 </span>
                         </div>
                     </li>
-                    <li class="list-group-item" id="print-tip-singlesided-3">Flip the printed pages and put them back
-                        into your printer.
+                    <li class="list-group-item" id="print-tip-singlesided-3">Chop etilgan sahifalarni aylantiring va printerga qo'ying.
                     </li>
-                    <li class="list-group-item" id="print-tip-singlesided-4">Now print these pages:
+                    <li class="list-group-item" id="print-tip-singlesided-4">Keyin buni chop eting:
                         <div class="input-group">
                             <input class="form-control" type="text" id="side2list" size="50"/>
                             <span class="input-group-btn">
